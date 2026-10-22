@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class Product{
@@ -13,8 +13,8 @@ export class Product{
     stock:number;
     @Column('varchar', {length:20})
     category:string;
-    @Column('timestamp')
+    @CreateDateColumn()
     createAt:Date;
-    @Column('timestamp')
-    updateAt:Date
+    @UpdateDateColumn()
+    updateAt:Date;
 }
